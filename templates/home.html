@@ -7,7 +7,9 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
     </head>
     <body>
-        <div class="container">
+        {% include 'navbar.html' %}
+        <img class="img-fluid" id="banner" src="/static/banner.jpg">
+        <div class="container" style="font-family: Arial, Helvetica, sans-serif;">
             <style>
                 #banner {
                     height: 360px;
@@ -15,12 +17,26 @@
                     object-fit: cover;
                 }
             </style>
-            <h1 class="mt-2 mb-4 text-center">Career at {{name}}</h1>
-            <img class="mt-2 mb-4 img-fluid" id="banner" src="/static/banner.jpg">
+            <h1 class="mt-2 mb-4 text-center"><b>Career at {{name}}</b></h1>
             <h2 class="mt-2 mb-4 text-center">About Us</h2>
-            <p class="mt-2 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus aliquet egestas neque, vel congue sapien tincidunt vel. Phasellus orci dui, tincidunt fermentum faucibus eget, maximus eget purus. Duis fringilla ipsum ut justo ultricies, ut ullamcorper eros pellentesque. Sed diam dui, gravida in accumsan et, suscipit non lorem. Donec posuere congue dictum. Aenean gravida, felis non tempor sagittis, elit urna dictum arcu, id euismod diam ligula at dui. Fusce non urna sed neque posuere auctor sit amet eu lectus. Curabitur nec ex lectus. Duis aliquam finibus nisl, vel molestie massa accumsan nec. Nulla tristique congue justo, sit amet convallis tellus auctor sit amet. Duis vitae sodales massa. Quisque et ipsum ut nisl eleifend viverra fringilla sit amet lorem.</p>
+            <div class="row">
+                <div class="col-7">
+                    <p class="mt-2 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus aliquet egestas neque, vel congue sapien tincidunt vel. Phasellus orci dui, tincidunt fermentum faucibus eget, maximus eget purus. Duis fringilla ipsum ut justo ultricies, ut ullamcorper eros pellentesque. Sed diam dui, gravida in accumsan et, suscipit non lorem. Donec posuere congue dictum. Aenean gravida, felis non tempor sagittis, elit urna dictum arcu, id euismod diam ligula at dui. Fusce non urna sed neque posuere auctor sit amet eu lectus. Curabitur nec ex lectus. Duis aliquam finibus nisl, vel molestie massa accumsan nec. Nulla tristique congue justo, sit amet convallis tellus auctor sit amet. Duis vitae sodales massa. Quisque et ipsum ut nisl eleifend viverra fringilla sit amet lorem.</p>
 
-            <p>Vestibulum ultrices nulla id mollis vehicula. Quisque a tincidunt neque, eget dignissim odio. Nullam suscipit, augue at consequat scelerisque, lorem turpis tincidunt erat, id cursus erat ipsum id felis. Cras tincidunt quam ac neque posuere, sit amet tristique arcu interdum. Curabitur eget nisi a arcu luctus dapibus. Quisque cursus tempor euismod. Sed eget gravida tortor, vitae porttitor arcu. Maecenas sodales a est et varius. Nunc vehicula dapibus erat. Cras tellus neque, porttitor et mi nec, venenatis ultricies urna. Morbi tincidunt porta magna eu vestibulum. Vestibulum bibendum sapien at libero cursus, id mollis eros tincidunt. Phasellus convallis iaculis risus feugiat scelerisque. Nulla id turpis semper eros sollicitudin convallis quis pellentesque nunc.</p>
+                    <p>Vestibulum ultrices nulla id mollis vehicula. Quisque a tincidunt neque, eget dignissim odio. Nullam suscipit, augue at consequat scelerisque, lorem turpis tincidunt erat, id cursus erat ipsum id felis. Cras tincidunt quam ac neque posuere, sit amet tristique arcu interdum. Curabitur eget nisi a arcu luctus dapibus. Quisque cursus tempor euismod. Sed eget gravida tortor, vitae porttitor arcu. Maecenas sodales a est et varius. Nunc vehicula dapibus erat. Cras tellus neque, porttitor et mi nec, venenatis ultricies urna. Morbi tincidunt porta magna eu vestibulum. Vestibulum bibendum sapien at libero cursus, id mollis eros tincidunt. Phasellus convallis iaculis risus feugiat scelerisque. Nulla id turpis semper eros sollicitudin convallis quis pellentesque nunc.</p>
+                </div>
+                <div class="col-5 mt-3">
+                    <img src="/static/about.jpg" class="img-fluid" id="about">
+                    <style>
+                        #about {
+                            height: 380px;
+                            width: 100%;
+                            object-fit: cover;
+                            border-radius: 8px;
+                        }
+                    </style>
+                </div>
+            </div>
             <h2 class="mt-4 mb-4 text-center">Current Job Openings</h2>
             <div>
                 {% for job in jobs %}
@@ -30,7 +46,7 @@
             <div class="text-center">
                 <button type="button" class="btn btn-outline-success mt-2 mb-4 ">Contact Us</button>
             </div>
-            
+            {% include 'footer.html' %}
         </div>
         
     </body>
